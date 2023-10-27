@@ -3,7 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "01": "bun 01_helloapi/01.ts"
+    "01": "bun 01_helloapi/01.ts",
+    "02": "bun 02_get_openai_models/02.ts",
+    "03": "bun 03_moderation/03.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
