@@ -22,8 +22,6 @@ const chat_prompt = ChatPromptTemplate.fromPromptMessages([
 async function main() {
     const data:blog_data = await get_token_and_task_data("blogger")
 
-    console.log("Task data: " + JSON.stringify(data));
-
     const topics = data.blog.join("; ");
 
     const promises = data.blog.map(async this_topic => {
@@ -41,7 +39,6 @@ async function main() {
     console.log("results: " + JSON.stringify(results));
 
     const isOK = await send_answer(results)
-    console.log(JSON.stringify(isOK));
 }
 
 main();

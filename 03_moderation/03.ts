@@ -16,8 +16,6 @@ async function main() {
     console.log("Moderation result: " + JSON.stringify(response_array));
 
     const isOK = await send_answer(response_array)
-    console.log(JSON.stringify(isOK));
-
 }
 
 main();
