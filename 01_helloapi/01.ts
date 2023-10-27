@@ -1,8 +1,8 @@
-import { getTokenAndTaskData, sendAnswer } from "../modules/tasks"
+import { get_token_and_task_data, send_answer } from "../modules/tasks"
 
 const helloTask = async () => {
-    const data = await getTokenAndTaskData("helloapi")
-    await sendAnswer(data.cookie)
+    const data = await get_token_and_task_data("helloapi")
+    await send_answer(data.cookie)
 }
 
 helloTask()

@@ -1,19 +1,19 @@
-const tasksConfig = {
+const tasks_config = {
     apiKey : process.env.ZADANIA_API_KEY,
     token : "",
     url : process.env.ZADANIA_URL,
 }
 
-export const getToken = async (taskName:string) => {
-    console.log(tasksConfig);
+export const get_token = async (task_name:string) => {
+    console.log(tasks_config);
     try {
-        const response = await fetch(`${tasksConfig.url}token/${taskName}`, {
+        const response = await fetch(`${tasks_config.url}token/${task_name}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                apikey: tasksConfig.apiKey
+                apikey: tasks_config.apiKey
             })
         })
 
@@ -22,8 +22,8 @@ export const getToken = async (taskName:string) => {
         }
 
         const data = await response.json();
-        console.log("tasksGetToken data: ", data)
-        tasksConfig.token = data.token;
+        console.log("get_token data: ", data)
+        tasks_config.token = data.token;
         return data.token;
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -31,15 +31,15 @@ export const getToken = async (taskName:string) => {
     }
 }
 
-export const getTaskData = async (token = tasksConfig.token) => {
+export const get_task_data = async (token = tasks_config.token) => {
     try {
-        const response = await fetch(`${tasksConfig.url}task/${token}`)
+        const response = await fetch(`${tasks_config.url}task/${token}`)
         if (!response.ok) {
             throw new Error(`HTTP error ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("tasksGetTaskData data: ", data)
+        console.log("get_task_data data: ", data)
         return data;
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -47,14 +47,14 @@ export const getTaskData = async (token = tasksConfig.token) => {
     }
 }
 
-export const getTokenAndTaskData = async (taskName:string) => {
-    await getToken(taskName)
-    return await getTaskData()
+export const get_token_and_task_data = async (task_name:string) => {
+    await get_token(task_name)
+    return await get_task_data()
 }
 
-export const sendAnswer = async (answer:any, token = tasksConfig.token) => {
+export const send_answer = async (answer:any, token = tasks_config.token) => {
     try {
-        const response = await fetch(`${tasksConfig.url}answer/${token}`, {
+        const response = await fetch(`${tasks_config.url}answer/${token}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -65,7 +65,7 @@ export const sendAnswer = async (answer:any, token = tasksConfig.token) => {
         })
 
         const data = await response.json();
-        console.log("tasksSendAnswer data: ", data)
+        console.log("send_answer data: ", data)
         return data;
     } catch (error) {
         console.error("Error fetching data:", error);
