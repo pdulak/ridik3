@@ -4,16 +4,13 @@ Set of solutions to tasks on AIDevs2 course
 
 ---
 
-To install dependencies:
+## Installation
 
-```bash
-bun install
-```
+- Copy `.env.example` to `.env` and fill in the values.
+- install bun if not installed before -> [https://bun.sh/](https://bun.sh/)
+- install dependencies with `bun install`
 
-To run:
+## Usage
 
-```bash
-bun run index.ts
-```
+- run `bun 01' to run task 1 and so on...
 
-This project was created using `bun init` in bun v1.0.7. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
