@@ -30,6 +30,8 @@ async function main() {
     // get the transcription
     const transcription = await transcription_result.json();
 
+    console.log(transcription)
+
     const isOK = await send_answer(transcription.text)
 }
 
