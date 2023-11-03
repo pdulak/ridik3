@@ -1,10 +1,7 @@
 import { get_token_and_task_data, send_answer } from "../modules/tasks"
-import { OpenAI } from "openai"
-
-const openai = new OpenAI()
 
 async function main() {
-    const data = await get_token_and_task_data("functions")
+    await get_token_and_task_data("functions")
 
     const function_definition = {
         "name": "addUser",
@@ -28,7 +25,7 @@ async function main() {
         }
     }
 
-    const isOK = await send_answer(function_definition)
+    await send_answer(function_definition)
 }
 
 main();

@@ -1,12 +1,4 @@
 import { get_token_and_task_data, send_answer } from "../modules/tasks"
-import { OpenAI } from "openai"
-const fs = require('fs');
-const path = require('path');
-const { Readable } = require('stream');
-const { finished } = require('stream/promises');
-const {mkdir,writeFile} = require("fs/promises");
-
-const openai = new OpenAI()
 
 async function main() {
     const data = await get_token_and_task_data("whisper")
@@ -32,7 +24,7 @@ async function main() {
 
     console.log(transcription)
 
-    const isOK = await send_answer(transcription.text)
+    await send_answer(transcription.text)
 }
 
 main();
