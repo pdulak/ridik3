@@ -1,4 +1,7 @@
 import { get_token_and_task_data, send_answer } from "../modules/tasks"
+import { OpenAI } from "openai"
+
+const openai = new OpenAI()
 
 async function main() {
     const data = await get_token_and_task_data("whisper")
@@ -9,18 +12,10 @@ async function main() {
     const blob = await fetch(link).then(r => r.blob());
     const file = new File([blob], "audio.mp3");
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("model", "whisper-1");
-    const transcription_result = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-        method: "POST",
-        headers: {
-            "Authorization": "Bearer " + process.env.OPENAI_API_KEY,
-        },
-        body: formData
-    });
-    // get the transcription
-    const transcription = await transcription_result.json();
+    const transcription = await openai.audio.transcriptions.create({
+        "file": file,
+        "model": "whisper-1"
+    })
 
     console.log(transcription)
 
