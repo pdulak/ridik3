@@ -18,7 +18,9 @@
     "13": "bun 13_search/13.ts",
     "14": "bun 14_search_chroma/14.ts",
     "15": "bun 15_people/15.ts",
-    "16": "bun 16_knowledge/16.ts"
+    "16": "bun 16_knowledge/16.ts",
+    "17": "bun 17_tools/17.ts",
+    "18": "bun 18_gnome/18.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
