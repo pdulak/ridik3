@@ -20,7 +20,8 @@
     "15": "bun 15_people/15.ts",
     "16": "bun 16_knowledge/16.ts",
     "17": "bun 17_tools/17.ts",
-    "18": "bun 18_gnome/18.ts"
+    "18": "bun 18_gnome/18.ts",
+    "19": "bun 19_ownapi/19.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
@@ -30,6 +31,7 @@
   },
   "dependencies": {
     "chromadb": "^1.6.1",
+    "express": "^4.18.2",
     "langchain": "^0.0.174",
     "node-html-markdown": "^1.3.0",
     "openai": "^4.14.0",
