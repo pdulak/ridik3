@@ -175,3 +175,6 @@ dist
 
 # other
 downloads
+/db.sqlite
+/chroma.log
+/chroma/
