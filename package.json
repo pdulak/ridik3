@@ -23,7 +23,8 @@
     "17": "bun 17_tools/17.ts",
     "18": "bun 18_gnome/18.ts",
     "19": "bun 19_ownapi/19.ts",
-    "20": "bun 20_ownapipro/20.ts"
+    "20": "bun 20_ownapipro/20.ts",
+    "21": "bun 21_meme/21.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
