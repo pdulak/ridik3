@@ -24,7 +24,8 @@
     "18": "bun 18_gnome/18.ts",
     "19": "bun 19_ownapi/19.ts",
     "20": "bun 20_ownapipro/20.ts",
-    "21": "bun 21_meme/21.ts"
+    "21": "bun 21_meme/21.ts",
+    "22": "bun 22_optimaldb/22.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
