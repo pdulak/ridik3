@@ -33,41 +33,29 @@ async function main() {
     const database_json_url = data.database;
     const friends = await fetch(database_json_url).then(r => r.json());
     const optimized = {};
+    const length_limit = 3000;
     let answer = "";
 
-
-    console.log(friends);
-
-    // join in string
     for (const friend in friends) {
         let source = "";
-        const length_limit = 3000;
 
         optimized[friend] = [];
         for (const info in friends[friend]) {
             if (source.length < length_limit) {
                 source += friends[friend][info] + " ";
             } else {
-                console.log("S: ", source);
                 const destination = await optimize_length(source);
-                console.log(`---\nD: `, destination, `\n---`);
                 optimized[friend].push(destination);
                 source = "";
             }
         }
         if (source.length > 0) {
-            console.log("S: ", source);
             const destination = await optimize_length(source);
-            console.log(`---\nD: `, destination, `\n---`);
             optimized[friend].push(destination);
         }
     }
 
-    console.log(optimized);
-    // convert to json string and return the length
-    console.log(JSON.stringify(optimized).length);
-
-    // write to file named "optimized.json"
+    // write to file for later use
     fs.writeFile(file_name, JSON.stringify(optimized), function(err) {
         if (err) {
             console.log(err);
@@ -76,23 +64,13 @@ async function main() {
 
     // prepare the answer string
     const answer_json = optimized;
-
     for (const friend in answer_json) {
         for (const info in answer_json[friend]) {
-            const info_part = answer_json[friend][info];
-            // replace \n with "friend"
-            answer += friend + ": " + info_part.replace(/\n/g, friend + ": ");
+            answer += answer_json[friend][info];
         }
     }
 
-    console.log("json: ", answer_json);
-    console.log("answer: ", answer);
-
     send_answer(answer);
-    // end the program
-    return;
-
-
 }
 
 main();
