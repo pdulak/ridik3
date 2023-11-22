@@ -25,7 +25,8 @@
     "19": "bun 19_ownapi/19.ts",
     "20": "bun 20_ownapipro/20.ts",
     "21": "bun 21_meme/21.ts",
-    "22": "bun 22_optimaldb/22.ts"
+    "22": "bun 22_optimaldb/22.ts",
+    "23": "bun 23_google/23.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
@@ -39,6 +40,7 @@
     "langchain": "^0.0.174",
     "node-html-markdown": "^1.3.0",
     "openai": "^4.14.0",
+    "serpapi": "^2.0.0",
     "tiktoken": "^1.0.10",
     "uuid": "^9.0.1"
   }
